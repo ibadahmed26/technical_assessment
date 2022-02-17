@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "427cede8-6b13-4418-aa3b-2d59833614ee",
+		"name": "resume_webapplication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get token",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "ibad",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "superuser",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/resumes/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"resumes",
+						""
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "ibadahmed26@gmail.com",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "superuser",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CRUD operations resume",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/resumes/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"resumes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add resume",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "skill",
+							"value": "c++",
+							"type": "default"
+						},
+						{
+							"key": "experience",
+							"value": "3 months",
+							"type": "default"
+						},
+						{
+							"key": "cv",
+							"type": "file",
+							"src": "/F:/DOCs/CVs/Ibad Ahmed (Python resume).docx"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/resumes/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"resumes",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
