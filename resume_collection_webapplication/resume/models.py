@@ -9,19 +9,14 @@ class MyUserManager(BaseUserManager):
         if not phone_number:
             raise ValueError("phone number is required ! ")
 
-        user = self.model(
-            username=username,
-            phone_number=phone_number
-            )
+        user = self.model(username=username, phone_number=phone_number)
         user.set_password(password)
         user.save(using=self._db)
         return user
 
     def create_superuser(self, username, phone_number, password=None):
         user = self.create_user(
-            username=username,
-            phone_number=phone_number,
-            password=password
+            username=username, phone_number=phone_number, password=password
         )
         user.is_admin = True
         user.is_staff = True
@@ -53,3 +48,9 @@ class User(AbstractBaseUser):
         return True
 
     objects = MyUserManager()
+
+
+class ResumeModel(models.Model):
+    skill = models.CharField(max_length=30)
+    experience = models.CharField(max_length=50)
+    cv = models.FileField(upload_to="User_CVs")

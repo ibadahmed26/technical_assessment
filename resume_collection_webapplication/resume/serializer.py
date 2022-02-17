@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from .models import User
+from .models import ResumeModel
 
 
-class UserSerializer(serializers.ModelSerializer):
+class ResumeSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
-        fields = '__all__'
+        model = ResumeModel
+        fields = ("id", "skill", "experience", "cv")
